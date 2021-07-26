@@ -18,8 +18,6 @@ func TestTerraformAwsVpc(t *testing.T) {
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		TerraformDir: workingDir,
 		Vars: map[string]interface{}{
-			"stage":           "labs",
-			"environment":     "compute",
 			"name":            "labs-compute-vpc",
 			"cidr":            "10.0.0.0/16",
 			"azs":             azs,
