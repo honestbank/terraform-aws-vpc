@@ -1,4 +1,4 @@
-package test_api_storage_infrastructure
+package test
 
 import (
 	"testing"
