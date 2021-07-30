@@ -1,3 +1,10 @@
+# ########################
+# Prepare Test Environment
+#
+# Purpose: To run as part in support the github actions workflow, during the scaffolding/build phase, prior
+# to the action/check running.
+# #########################
+
 # #########################
 # Set environment variables
 # #########################

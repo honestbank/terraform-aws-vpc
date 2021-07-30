@@ -4,8 +4,6 @@ export AWS_DEFAULT_REGION="ap-southeast-1"
 
 export TF_VAR_name="test-vpc"
 
-terraform plan -var-file=test.tfvars
-pause
 terraform apply -var-file=test.tfvars
 pause
 terraform destroy -var-file=test.tfvars

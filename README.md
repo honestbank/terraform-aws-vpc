@@ -1,6 +1,6 @@
-### Terraform AWS VPC
+# Terraform AWS VPC
 
-This script builds the basic infrastructure needed to create an AWS VPC, with:
+This script builds an AWS VPC, with:
 
 * Internet Gatway (Attached to VPC)
 * NAT Gateways (Server access to the Internet for updates, time checks, etc)
@@ -10,19 +10,18 @@ This script builds the basic infrastructure needed to create an AWS VPC, with:
 Once built, this environment can be used as a stepping stone to build compute infrastructure on top, for example,
 a EKS/K8S cluster.
 
-#### Required Inputs:
+## Required Inputs
 
 This code is presented as a module, and requires the following inputs:
 
-* Name: Name suffix to be attached to the VPC and associated items
+* Name: Name suffix to be attached to the VPC and associated items (`test, dev, qa, prod`)
 * CIDR: Networking Range for the subnet. Largest that AWS allows is a /16
 * Availability Zones
 * Public Subnets
-* Private Subnets 
+* Private Subnets
 
-Please see the test.tfvars file for an example. 
+Please see the test.tfvars file for an example.
 
-
-### Tests:
+## Tests
 
 To run a simple test, review and run the `$ run.sh` script.
