@@ -10,7 +10,6 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
   AWS_DEFAULT_REGION: "ap-southeast-1"
-  TERRATEST_IAM_ROLE: ${{ secrets.TERRAFORM_IAM_ROLE }}
 jobs:
   terratest:
     name: terratest
