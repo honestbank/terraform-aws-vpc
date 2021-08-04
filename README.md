@@ -21,7 +21,3 @@ This code is presented as a module, and requires the following inputs:
 * Private Subnets
 
 Please see the test.tfvars file for an example.
-
-## Tests
-
-To run a simple test, review and run the `$ run.sh` script.
