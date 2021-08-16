@@ -1,5 +1,23 @@
-module "vpc" {
-  source = "terraform-aws-modules/vpc/aws"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 3.54.0, < 4.0.0"
+    }
+  }
+
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "honestbank"
+
+    workspaces {
+      name = "terraform-aws-vpc"
+    }
+  }
+}
+
+module "aws-vpc" {
+  source = "./aws-vpc"
 
   name = var.name
 
@@ -7,12 +25,4 @@ module "vpc" {
   azs             = var.azs
   private_subnets = var.private_subnets
   public_subnets  = var.public_subnets
-
-  enable_nat_gateway = true
-  enable_vpn_gateway = false
-
-  tags = {
-    Terraform   = "true"
-    Environment = "${var.name}"
-  }
 }

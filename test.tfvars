@@ -13,7 +13,6 @@
 #   * public_subnets: CIDR allocations for each public subnet. We use /19 as it gives us a total of 8 portions of a /16 address. 3 for Public, 3 for Private and 2 for future expansion
 #   * private_subnets: IDR allocations for each public subnet. We use /19 as it gives us a total of 8 portions of a /16 address. 3 for Public, 3 for Private and 2 for future expansion
 
-
 name = "labs-test-vpc-deployment"
 cidr = "10.250.0.0/16"
 

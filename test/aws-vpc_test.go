@@ -1,6 +1,7 @@
 package test
 
 import (
+	"github.com/gruntwork-io/terratest/modules/logger"
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/aws"
@@ -19,7 +20,9 @@ func TestTerraformAwsVpc(t *testing.T) {
 	public_subnets := []string{"10.0.0.0/19"}
 	private_subnets := []string{"10.0.128.0/19"}
 
-	workingDir := test_structure.CopyTerraformFolderToTemp(t, "../.", ".")
+	workingDir := test_structure.CopyTerraformFolderToTemp(t, "../aws-vpc", ".")
+	logger.Logf(t, "path to test folder %s\n", workingDir)
+
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		TerraformDir: workingDir,
 		Vars: map[string]interface{}{
