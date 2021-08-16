@@ -1,6 +1,6 @@
-# TFVars file to build a VPC in the labs AWS 
+# TFVars file to build a VPC in the labs AWS
 # Used in conjunction with the (limited) AWS credentials in the run.sh file to spin up a test VPC cluster
-# 
+#
 # Name: labs-test-vpc-deployment
 #
 # The name could probably be better. The terraform builds an example VPC in the "lab-compute" account in the Root > tf-testing > Compute Organization Unit in AWS.

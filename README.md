@@ -14,7 +14,7 @@ a EKS/K8S cluster.
 
 >
 > 💾 See the [test.tfvars file](./test.tfvars) for an example.
-> 
+>
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
