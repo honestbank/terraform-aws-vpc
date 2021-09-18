@@ -32,6 +32,9 @@ func TestTerraformAwsVpc(t *testing.T) {
 			"public_subnets":  public_subnets,
 			"private_subnets": private_subnets,
 		},
+		EnvVars: map[string]string{
+			"AWS_DEFAULT_REGION": "ap-southeast-1",
+		},
 	})
 
 	defer terraform.Destroy(t, terraformOptions)
