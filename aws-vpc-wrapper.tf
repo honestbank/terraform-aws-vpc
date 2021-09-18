@@ -1,4 +1,12 @@
 terraform {
+  backend "remote" {
+    organization = "honestbank"
+
+    workspaces {
+      name = "terraform-aws-vpc"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -6,14 +14,7 @@ terraform {
     }
   }
 
-  backend "remote" {
-    hostname     = "app.terraform.io"
-    organization = "honestbank"
-
-    workspaces {
-      name = "terraform-aws-vpc"
-    }
-  }
+  required_version = "~> 1.0"
 }
 
 module "aws-vpc" {
