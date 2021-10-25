@@ -18,10 +18,14 @@ terraform {
   required_version = "~> 1.0"
 }
 
+resource "random_id" "vpc_random_suffix" {
+  byte_length = 4
+}
+
 module "aws-vpc" {
   source = "./aws-vpc"
 
-  name            = var.name
+  name            = "${var.name}-${random_id.vpc_random_suffix.hex}"
   azs             = var.azs
   cidr            = var.cidr
   private_subnets = var.private_subnets
