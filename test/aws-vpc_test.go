@@ -33,7 +33,7 @@ func TestTerraformAwsVpc(t *testing.T) {
 			"private_subnets": private_subnets,
 		},
 		EnvVars: map[string]string{
-			"AWS_DEFAULT_REGION": "ap-southeast-1",
+			"AWS_DEFAULT_REGION": awsRegion,
 		},
 	})
 
