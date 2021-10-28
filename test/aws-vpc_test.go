@@ -30,6 +30,8 @@ func TestTerraformAwsVpc(t *testing.T) {
 			"azs":             azs,
 			"public_subnets":  public_subnets,
 			"private_subnets": private_subnets,
+			"enable_flow_log": false,
+			"flow_log_cloudwatch_log_group_retention_in_days": 0,
 		},
 	})
 
@@ -38,12 +40,10 @@ func TestTerraformAwsVpc(t *testing.T) {
 	terraform.InitAndApply(t, terraformOptions)
 
 	privateSubnetId := terraform.Output(t, terraformOptions, "private_subnets")
-
 	vpcId := terraform.Output(t, terraformOptions, "vpc_id")
-
-	subnets := aws.GetSubnetsForVpc(t, vpcId, awsRegion)
+	vpc := aws.GetVpcById(t, vpcId, awsRegion)
+	subnets := vpc.Subnets
 
 	require.Equal(t, 2, len(subnets))
-
 	assert.False(t, aws.IsPublicSubnet(t, privateSubnetId, awsRegion))
 }
