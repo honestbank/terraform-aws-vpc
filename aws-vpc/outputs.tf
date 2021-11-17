@@ -8,6 +8,16 @@ output "public_subnets" {
   value       = module.vpc.public_subnets
 }
 
+output "private_route_table_ids" {
+  description = "List of IDs of private route tables."
+  value       = module.vpc.private_route_table_ids
+}
+
+output "public_route_table_ids" {
+  description = "List of IDs of public route tables."
+  value       = module.vpc.public_route_table_ids
+}
+
 output "vpc_id" {
   description = "AWS identifier for the VPC provisioned by this module"
   value       = module.vpc.vpc_id

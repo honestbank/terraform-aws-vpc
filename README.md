@@ -22,18 +22,21 @@ This module is currently consumed by the [api-cloud-infrastructure repo](https:/
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_random"></a> [random](#provider\_random) | 3.1.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_aws-vpc"></a> [aws-vpc](#module\_aws-vpc) | ./aws-vpc | n/a |
-| <a name="module_vpc"></a> [vpc](#module\_vpc) | terraform-aws-modules/vpc/aws | n/a |
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [random_id.vpc_random_suffix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id) | resource |
 
 ## Inputs
 
@@ -51,6 +54,8 @@ No resources.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_private_route_table_ids"></a> [private\_route\_table\_ids](#output\_private\_route\_table\_ids) | List of IDs of private route tables. |
 | <a name="output_private_subnets"></a> [private\_subnets](#output\_private\_subnets) | List of private subnet IDs returned from terraform-aws-vpc module (aws\_subnet.private.*.id) |
+| <a name="output_public_route_table_ids"></a> [public\_route\_table\_ids](#output\_public\_route\_table\_ids) | List of IDs of public route tables. |
 | <a name="output_public_subnets"></a> [public\_subnets](#output\_public\_subnets) | List of public subnet IDs, returned from terraform-aws-vpc module (aws\_subnet.public.*.id) |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | AWS identifier for the VPC provisioned by this module |
