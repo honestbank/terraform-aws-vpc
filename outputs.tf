@@ -25,10 +25,10 @@ output "vpc_id" {
 
 output "igw_id" {
   description = "AWS identifier for the Internet gateway at VPC level"
-  value       = module.vpc.igw_id
+  value       = module.aws-vpc.igw_id
 }
 
 output "igw_arn" {
   description = "AWS ARN for the Internet gateway at VPC level"
-  value       = module.vpc.igw_arn
+  value       = module.aws-vpc.igw_arn
 }
