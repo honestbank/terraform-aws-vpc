@@ -135,6 +135,9 @@ Temporary Items
 *.tfstate
 *.tfstate.*
 
+# files related to external terraform modules
+.external_modules/ 
+
 # Crash log files
 crash.log
 

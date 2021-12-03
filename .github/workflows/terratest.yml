@@ -36,12 +36,3 @@ jobs:
         run: |
           cd test
           go test -v -timeout 30m
-      - name: Release
-        uses: cycjimmy/semantic-release-action@v2
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          extra_plugins: |
-            @semantic-release/git@7.0.18
-            @semantic-release/exec@3.3.8
-            @semantic-release/changelog@3.0.0
