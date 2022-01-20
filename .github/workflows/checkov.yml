@@ -1,0 +1,22 @@
+name: "Checkov GitHub Action"
+on:
+  pull_request:
+    branches: [test, dev, qa, prod, main]
+
+jobs:
+  checkov:
+    name: checkov
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+      - name: Run Checkov
+        id: checkov
+        uses: bridgecrewio/checkov-action@master
+        with:
+          output_format: cli
+          skip_check: CKV2_AWS_1,CKV2_AWS_11,CKV2_AWS_12,CKV2_AWS_19,CKV_AWS_111,CKV_AWS_130
+          quiet: true # optional: display only failed checks
+          download_external_modules: true
