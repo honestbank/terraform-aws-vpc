@@ -32,3 +32,8 @@ variable "azs" {
   description = "az's (Availability Zones): Where, geographically to allocate the subnets, referenced using AWS's AZ codes - ie. ap-southeast-1a = Singapore AZ 'A'"
   type        = list(string)
 }
+
+variable "enable_dns_hostnames" {
+  description = "Wether to enable DNS hostnames in the VPC"
+  default     = false
+}

@@ -19,6 +19,10 @@ module "vpc" {
   enable_flow_log                                 = var.enable_flow_log
   flow_log_cloudwatch_log_group_retention_in_days = var.flow_log_cloudwatch_log_group_retention_in_days
 
+  # DNS
+  enable_dns_support   = true
+  enable_dns_hostnames = var.enable_dns_hostnames
+
   # Tags
   tags = {
     Terraform   = "true"
