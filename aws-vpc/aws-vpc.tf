@@ -1,3 +1,15 @@
+terraform {
+  required_version = "~> 1.0"
+
+  # see https://www.terraform.io/language/modules/develop/providers#passing-providers-explicitly for more information
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "~> 3.0"
