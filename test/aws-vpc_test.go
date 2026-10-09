@@ -42,11 +42,12 @@ func TestTerraformAwsVpc(t *testing.T) {
 
 	terraform.InitAndApply(t, terraformOptions)
 
-	privateSubnetId := terraform.Output(t, terraformOptions, "private_subnets")
+	privateSubnetIds := terraform.OutputList(t, terraformOptions, "private_subnets")
+	require.Equal(t, 1, len(privateSubnetIds))
 	vpcId := terraform.Output(t, terraformOptions, "vpc_id")
 	vpc := aws.GetVpcById(t, vpcId, awsRegion)
 	subnets := vpc.Subnets
 
 	require.Equal(t, 2, len(subnets))
-	assert.False(t, aws.IsPublicSubnet(t, privateSubnetId, awsRegion))
+	assert.False(t, aws.IsPublicSubnet(t, privateSubnetIds[0], awsRegion))
 }
