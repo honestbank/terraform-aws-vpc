@@ -11,8 +11,9 @@ terraform {
 }
 
 module "vpc" {
+  #checkov:skip=CKV_AWS_338:Flow-log retention is set by the caller through flow_log_cloudwatch_log_group_retention_in_days (network-infrastructure uses 30 days, DEVOP-749)
   source  = "terraform-aws-modules/vpc/aws"
-  version = ">= 5.0"
+  version = "6.7.3" #checkov:skip=CKV_TF_1:Registry module pinned to an exact release; a commit-hash git source would stop checkov from scanning the module
 
   # General
   name            = var.name
